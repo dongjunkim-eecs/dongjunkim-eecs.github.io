@@ -1,103 +1,145 @@
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#fff;color:#000;font-family:Arial,sans-serif;font-size:15px;line-height:1.6}
-  .wrap{max-width:960px;margin:0 auto;padding:80px 60px 100px}
-  .header{display:flex;align-items:flex-start;gap:48px;margin-bottom:80px}
-  .avatar{width:130px;height:160px;background:#f2f2f2;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-  .avatar-text{font-size:11px;color:#aaa;text-align:center;line-height:2}
-  .header-info{padding-top:6px}
-  .header-name{font-size:36px;font-weight:700;margin-bottom:10px}
-  .header-role{font-size:15px;color:#555;margin-bottom:18px;line-height:1.7}
-  .header-links{display:flex;gap:28px;flex-wrap:wrap}
-  .header-links a{font-size:14px;color:#000;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:6px}
-  .header-links a:hover{color:#555}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dongjun Kim</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#fff;color:#000;font-family:Arial,sans-serif;font-size:15px;line-height:1.6}
+    .wrap{max-width:960px;margin:0 auto;padding:80px 60px 100px}
 
-  .section{margin-bottom:72px}
-  .section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:28px}
+    /* HEADER */
+    .header{display:flex;align-items:flex-start;gap:48px;margin-bottom:80px}
+    .avatar{width:180px;height:220px;background:#f2f2f2;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .avatar-text{font-size:11px;color:#aaa;text-align:center;line-height:2}
+    .header-info{padding-top:6px}
+    .header-name{font-size:36px;font-weight:700;margin-bottom:10px}
+    .header-role{font-size:15px;color:#555;margin-bottom:18px;line-height:1.7}
+    .header-links{display:flex;gap:28px;flex-wrap:wrap}
+    .header-links a{font-size:14px;color:#000;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:6px}
+    .header-links a:hover{color:#555}
 
-  .pub{margin-bottom:26px}
-  .pub-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid #000;padding:1px 8px;margin-bottom:7px}
-  .pub-title{font-size:16px;font-weight:700;margin-bottom:4px;line-height:1.5}
-  .pub-authors{font-size:14px;color:#555;margin-bottom:2px}
-  .pub-venue{font-size:14px;color:#555}
+    /* SECTIONS */
+    .section{margin-bottom:72px}
+    .section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:28px}
 
-  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 48px}
-  .proj-tag{font-size:11px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;outline:none;min-height:16px}
-  .proj-name{font-size:15px;font-weight:700;margin-bottom:6px;outline:none;min-height:22px}
-  .proj-desc{font-size:13px;color:#444;line-height:1.65;outline:none;min-height:60px}
-  [contenteditable]:empty:before{content:attr(placeholder);color:#ccc}
-  [contenteditable]:focus{background:#fafafa}
-</style>
+    /* PUBLICATIONS */
+    .pub{margin-bottom:26px}
+    .pub-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid #000;padding:1px 8px;margin-bottom:7px}
+    .pub-title{font-size:16px;font-weight:700;margin-bottom:4px;line-height:1.5}
+    .pub-authors{font-size:14px;color:#555;margin-bottom:6px}
+    .pub-venue{font-size:14px;color:#555;margin-bottom:8px}
+    .pub-links{display:flex;gap:10px}
+    .pub-links a{font-size:12px;font-weight:700;color:#000;text-decoration:none;border:1px solid #000;padding:2px 10px;letter-spacing:.04em}
+    .pub-links a:hover{background:#000;color:#fff}
 
+    /* PROJECTS */
+    .proj{margin-bottom:26px}
+    .proj-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid #888;color:#888;padding:1px 8px;margin-bottom:7px}
+    .proj-title{font-size:16px;font-weight:700;margin-bottom:4px;line-height:1.5}
+    .proj-short{font-size:14px;color:#555;margin-bottom:6px}
+    .proj-detail{font-size:14px;color:#444;line-height:1.7;margin-bottom:8px;max-width:720px}
+    .proj-links{display:flex;gap:10px}
+    .proj-links a{font-size:12px;font-weight:700;color:#000;text-decoration:none;border:1px solid #000;padding:2px 10px;letter-spacing:.04em}
+    .proj-links a:hover{background:#000;color:#fff}
+
+    @media(max-width:640px){
+      .wrap{padding:48px 24px 80px}
+      .header{flex-direction:column;gap:28px}
+      .avatar{width:120px;height:148px}
+      .header-name{font-size:28px}
+      .header-links{gap:16px}
+    }
+  </style>
+</head>
+<body>
 <div class="wrap">
+
+  <!-- HEADER -->
   <div class="header">
     <div class="avatar">
+      <!-- Replace src with your photo path, e.g. src="photo.jpg" -->
       <div class="avatar-text">Photo</div>
     </div>
     <div class="header-info">
-      <div class="header-name"> Dongjun Kim</div>
+      <div class="header-name">Dongjun Kim</div>
       <div class="header-role">
         B.S. Candidate, Electronics Engineering &nbsp;·&nbsp; Kangwon National University<br>
         Audio AI Lab &nbsp;·&nbsp; TinyML &nbsp;·&nbsp; HW-SW Co-design &nbsp;·&nbsp; Edge AI
       </div>
       <div class="header-links">
-        <a href="#">✉️ Email</a>
-        <a href="#">🐙 GitHub</a>
-        <a href="#">📄 CV</a>
-        <a href="#">🎓 Google Scholar</a>
+        <a href="mailto:jun200205@kangwon.ac.kr">✉️ Email</a>
+        <a href="https://github.com/dongjunkim-eecs" target="_blank">🐙 GitHub</a>
+        <a href="cv.pdf" target="_blank">📄 CV</a>
+        <a href="https://scholar.google.com/citations?user=YOURID" target="_blank">🎓 Google Scholar</a>
       </div>
     </div>
   </div>
 
+  <!-- PUBLICATIONS -->
   <div class="section">
     <div class="section-title">Publications</div>
+
     <div class="pub">
       <div class="pub-badge">Major Revision</div>
       <div class="pub-title">Quantization-Adversarial Distillation for Lightweight Underwater Acoustic Ship Classification</div>
       <div class="pub-authors"><strong>Dongjun Kim</strong>, Sung-Hoon Byun, Sangwook Park*</div>
       <div class="pub-venue">IEEE Embedded Systems Letters · 2026</div>
+      <div class="pub-links">
+        <a href="#">Paper</a>
+        <a href="https://github.com/KNU-LMAP/edge-qad">Code</a>
+      </div>
     </div>
+
     <div class="pub">
       <div class="pub-badge">Minor Revision</div>
       <div class="pub-title">Ultra-Lightweight Ship-Radiated Sound Classification for Real-time Embedded Inference</div>
-      <div class="pub-authors"> Sangwon Park, <strong>Dongjun Kim</strong>, Sung-Hoon Byun, Sangwook Park</div>
+      <div class="pub-authors">Sangwon Park, <strong>Dongjun Kim</strong>, Sung-Hoon Byun, Sangwook Park*</div>
       <div class="pub-venue">IEEE Embedded Systems Letters · 2026</div>
+      <div class="pub-links">
+        <a href="#">Paper</a>
+        <a href="https://github.com/KNU-LMAP/ShuffleFAC">Code</a>
+      </div>
     </div>
+
   </div>
 
+  <!-- PROJECTS -->
   <div class="section">
     <div class="section-title">Projects</div>
-    <div class="proj-grid">
-      <div>
-        <div class="proj-tag" contenteditable="true" placeholder="Category">Edge AI</div>
-        <div class="proj-name" contenteditable="true" placeholder="Project name">On-ieum</div>
-        <div class="proj-desc" contenteditable="true" placeholder="Description"> Integrated AIoT System for the Digitally Vulnerable, based on Raspberry Pi 5 and Jetson Orin Nano</div>
+
+    <div class="proj">
+      <div class="proj-badge">Edge AI</div>
+      <div class="proj-title">On-ieum</div>
+      <div class="proj-short">Integrated AIoT System for the Digitally Vulnerable · Raspberry Pi 5 + Jetson Orin Nano</div>
+      <div class="proj-detail">
+        Public transit guidance kiosk designed for elderly users. Built on Raspberry Pi 5 + Hailo AI HAT+ for face recognition (ArcFace) and Faster-Whisper STT, with gRPC communication to Jetson Orin Nano running an EXAONE LLM. Integrates Kakao/ODsay transit APIs and USB thermal receipt printing. Full-stack development from Flask UI to edge inference pipeline.
       </div>
-      <div>
-        <div class="proj-tag" contenteditable="true" placeholder="Category"></div>
-        <div class="proj-name" contenteditable="true" placeholder="Project name"></div>
-        <div class="proj-desc" contenteditable="true" placeholder="Description"></div>
-      </div>
-      <div>
-        <div class="proj-tag" contenteditable="true" placeholder="Category"></div>
-        <div class="proj-name" contenteditable="true" placeholder="Project name"></div>
-        <div class="proj-desc" contenteditable="true" placeholder="Description"></div>
-      </div>
-      <div>
-        <div class="proj-tag" contenteditable="true" placeholder="Category"></div>
-        <div class="proj-name" contenteditable="true" placeholder="Project name"></div>
-        <div class="proj-desc" contenteditable="true" placeholder="Description"></div>
-      </div>
-      <div>
-        <div class="proj-tag" contenteditable="true" placeholder="Category"></div>
-        <div class="proj-name" contenteditable="true" placeholder="Project name"></div>
-        <div class="proj-desc" contenteditable="true" placeholder="Description"></div>
-      </div>
-      <div>
-        <div class="proj-tag" contenteditable="true" placeholder="Category"></div>
-        <div class="proj-name" contenteditable="true" placeholder="Project name"></div>
-        <div class="proj-desc" contenteditable="true" placeholder="Description"></div>
+      <div class="proj-links">
+        <a href="#">Code</a>
       </div>
     </div>
+
+    <!-- Add more projects below using the same structure -->
+    <!--
+    <div class="proj">
+      <div class="proj-badge">Category</div>
+      <div class="proj-title">Project Name</div>
+      <div class="proj-short">One-line summary · Tech stack</div>
+      <div class="proj-detail">
+        Detailed description goes here.
+      </div>
+      <div class="proj-links">
+        <a href="#">Code</a>
+        <a href="#">Demo</a>
+      </div>
+    </div>
+    -->
+
   </div>
+
 </div>
+</body>
+</html>
