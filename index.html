@@ -84,12 +84,13 @@
     <div class="header-info">
       <div class="header-name">Dongjun Kim</div>
       <div class="header-role">
-        Senior Student, Electronic and Semiconductor Engineering <br>Kangwon National University<br>
+      Senior Undergraduate, Electronic and Semiconductor Engineering, Kangwon National University<br>
+      <strong>Prospective Ph.D. Student (Fall 2027)</strong>
       </div>
       <div class="header-bio">
         I am an undergraduate researcher at Kangwon National University, advised by
-        <a href="https://ee.gwnu.ac.kr/sites/ee/files/%EB%B0%95%EC%83%81%EC%9A%B1%20%EA%B5%90%EC%88%98%EB%8B%98%20LMAP%20LAB%20%EC%86%8C%EA%B0%9C%EC%9E%90%EB%A3%8C.jpg" target="_blank">Prof. Sangwook Park</a>,
-        working at the intersection of Edge AI and underwater acoustics. Currently, My research focuses on lightweight deep learning models for underwater acoustic target recognition (UATR), deploying efficient models on resource-constrained hardware.
+        <a href="https://scholar.google.com/citations?hl=en&user=5zX4bi4AAAAJ" target="_blank">Prof. Sangwook Park</a>,
+        My research focuses on Energy-Efficient AI Systems, specifically developing training and compression frameworks to deploy deep learning models onto resource-constrained edge devices.
       </div>
       <div class="header-links">
         <a href="mailto:dongjun.kim.eecs@gmail.com">Email</a>
@@ -115,12 +116,13 @@
     </div>
       
     <div class="news-item">
-      <span class="news-date">June 25, 2026</span>
-      <span class="news-text">2nd-authored paper (ShuffleFAC) accepted to IEEE Embedded Systems Letters (ESL) 🎉</span>
-    </div>
-    <div class="news-item">
       <span class="news-date">July 13, 2026</span>
       <span class="news-text">Visiting Scholar at <strong>Purdue University - KIAT </strong> (Edge Acoustics AI for Manufacturing)</span>
+    </div>
+    
+    <div class="news-item">
+      <span class="news-date">June 25, 2026</span>
+      <span class="news-text">2nd-authored paper (ShuffleFAC) accepted to IEEE Embedded Systems Letters (ESL) 🎉</span>
     </div>
   </div>
 
@@ -172,10 +174,20 @@
 
     <div class="proj">
       <div class="proj-badge">Edge AI</div>
+      <div class="proj-title">Real-Time Edge AI System for CNC machine chatter detection</div>
+      <div class="proj-detail"> 
+        Developed an end-to-end Edge AI monitoring pipeline for CNC anomaly detection, operating entirely on-device without cloud dependency. Trained an ultra-lightweight ShuffleFAC model, deployed it on a Raspberry Pi 4, and demonstrated real-time classification of abnormal chatter using acoustic data collected directly from a CNC machine.
+      </div>
+
+      <div class="proj-links">
+        <a href="https://drive.google.com/file/d/1HU3H7m8cp7MmcDSikemzwkma4Bb1JVGb/view">Slides</a>
+      </div>
+      
+    <div class="proj">
+      <div class="proj-badge">Edge AI</div>
       <div class="proj-title">On-ieum</div>
-      <div class="proj-short">Integrated AIoT System for the Digitally Vulnerable · Raspberry Pi 5 + Jetson Orin Nano</div>
       <div class="proj-detail">
-        Public transit guidance kiosk designed for elderly users. Built on Raspberry Pi 5 + Hailo AI HAT+ for face recognition (ArcFace) and Faster-Whisper STT, with gRPC communication to Jetson Orin Nano running an EXAONE LLM. Integrates Kakao/ODsay transit APIs and USB thermal receipt printing. Full-stack development from Flask UI to edge inference pipeline.
+        Public transit guidance kiosk designed for the Digitally Vulnerable. Built on Raspberry Pi 5 + Hailo AI HAT+ for face recognition and Speech-to-Text, with gRPC communication to Jetson Orin Nano running an Ondevice LLM. Integrates Public transit APIs and USB thermal receipt. 
       </div>
       <div class="proj-links">
         <a href="https://github.com/dongjunkim-eecs/on-ieum">Code</a>
