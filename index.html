@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,22 +46,25 @@
     .pub-title{font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.5}
     .pub-authors{font-size:13px;color:#555;margin-bottom:4px}
     .pub-venue{font-size:13px;color:#555;margin-bottom:8px}
-    .pub-links{display:flex;gap:10px;flex-wrap:wrap}
-    .pub-links a{font-size:12px;font-weight:700;color:#000;text-decoration:none;border:1px solid #000;padding:2px 10px;letter-spacing:.04em}
-    .pub-links a:hover{background:#000;color:#fff}
+
+    /* LINKS — pipe-separated blue style */
+    .pub-links{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+    .pub-links a{font-size:15px;font-weight:700;color:#4a90d9;text-decoration:none}
+    .pub-links a:hover{text-decoration:underline}
+    .pub-links .sep{font-size:15px;color:#aaa;margin:0 8px}
 
     /* PROJECTS */
-    .proj{margin-bottom:26px}
-    .proj-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid #888;color:#888;padding:1px 8px;margin-bottom:7px}
-    .proj-title{font-size:16px;font-weight:700;margin-bottom:4px;line-height:1.5}
-    .proj-short{font-size:14px;color:#555;margin-bottom:6px}
-    .proj-detail{font-size:14px;color:#444;line-height:1.7;margin-bottom:8px;max-width:720px}
     .proj{display:flex;gap:24px;margin-bottom:36px;align-items:flex-start}
     .proj-thumb{width:245px;flex-shrink:0;background:#f2f2f2;overflow:hidden}
     .proj-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .proj-links{display:flex;gap:10px}
-    .proj-links a{font-size:12px;font-weight:700;color:#000;text-decoration:none;border:1px solid #000;padding:2px 10px;letter-spacing:.04em}
-    .proj-links a:hover{background:#000;color:#fff}
+    .proj-body{}
+    .proj-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid #888;color:#888;padding:1px 8px;margin-bottom:7px}
+    .proj-title{font-size:16px;font-weight:700;margin-bottom:4px;line-height:1.5}
+    .proj-detail{font-size:14px;color:#444;line-height:1.7;margin-bottom:8px}
+    .proj-links{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+    .proj-links a{font-size:15px;font-weight:700;color:#4a90d9;text-decoration:none}
+    .proj-links a:hover{text-decoration:underline}
+    .proj-links .sep{font-size:15px;color:#aaa;margin:0 8px}
 
     @media(max-width:640px){
       .wrap{padding:48px 24px 80px}
@@ -71,6 +75,8 @@
       .header-links{gap:16px}
       .pub{flex-direction:column}
       .pub-thumb{width:100%}
+      .proj{flex-direction:column}
+      .proj-thumb{width:100%}
     }
   </style>
 </head>
@@ -148,6 +154,7 @@
         <div class="pub-venue">IEEE Embedded Systems Letters · 2026</div>
         <div class="pub-links">
           <a href="https://ieeexplore.ieee.org/document/11690630" target="_blank">Paper</a>
+          <span class="sep">|</span>
           <a href="https://github.com/KNU-LMAP/edge-qad" target="_blank">Code</a>
         </div>
       </div>
@@ -164,6 +171,7 @@
         <div class="pub-venue">IEEE Embedded Systems Letters · 2026</div>
         <div class="pub-links">
           <a href="https://ieeexplore.ieee.org/document/11586049" target="_blank">Paper</a>
+          <span class="sep">|</span>
           <a href="https://github.com/KNU-LMAP/ShuffleFAC" target="_blank">Code</a>
         </div>
       </div>
@@ -176,30 +184,34 @@
     <div class="section-title">Projects</div>
 
     <div class="proj">
-      <div calss="proj-thumb">
-        <img src="./assests/purdue_ai.png" alth="Purdue CNC Edge AI">
+      <div class="proj-thumb">
+        <img src="./assests/purdue_ai.png" alt="Purdue CNC Edge AI">
       </div>
-      <div class="proj-badge">Edge AI</div>
-      <div class="proj-title">Real-Time Edge AI System for CNC Machine Chatter Detection</div>
-      <div class="proj-detail">
-        Developed an end-to-end Edge AI monitoring pipeline for CNC anomaly detection, operating entirely on-device without cloud dependency. Trained an ultra-lightweight ShuffleFAC model, deployed it on a Raspberry Pi 4, and demonstrated real-time classification of abnormal chatter using acoustic data collected directly from a CNC machine.
-      </div>
-      <div class="proj-links">
-        <a href="https://drive.google.com/file/d/1HU3H7m8cp7MmcDSikemzwkma4Bb1JVGb/view" target="_blank">Slides</a>
+      <div class="proj-body">
+        <div class="proj-badge">Edge AI</div>
+        <div class="proj-title">Real-Time Edge AI System for CNC Machine Chatter Detection</div>
+        <div class="proj-detail">
+          Developed an end-to-end Edge AI monitoring pipeline for CNC anomaly detection, operating entirely on-device without cloud dependency. Trained an ultra-lightweight ShuffleFAC model, deployed it on a Raspberry Pi 4, and demonstrated real-time classification of abnormal chatter using acoustic data collected directly from a CNC machine.
+        </div>
+        <div class="proj-links">
+          <a href="https://drive.google.com/file/d/1HU3H7m8cp7MmcDSikemzwkma4Bb1JVGb/view" target="_blank">Slides</a>
+        </div>
       </div>
     </div>
 
     <div class="proj">
-      <div calss="proj-thumb">
-        <img src="./assests/onieum.png" alth="Onieum Edge AI">
+      <div class="proj-thumb">
+        <img src="./assests/onieum.png" alt="On-ieum Edge AI">
       </div>
-      <div class="proj-badge">Edge AI</div>
-      <div class="proj-title">On-ieum</div>
-      <div class="proj-detail">
-        Public transit guidance kiosk designed for the Digitally Vulnerable. Built on Raspberry Pi 5 + Hailo AI HAT+ for face recognition and Speech-to-Text, with gRPC communication to Jetson Orin Nano running an Ondevice LLM. Integrates Public transit APIs and USB thermal receipt.
-      </div>
-      <div class="proj-links">
-        <a href="https://github.com/dongjunkim-eecs/on-ieum" target="_blank">Code</a>
+      <div class="proj-body">
+        <div class="proj-badge">Edge AI</div>
+        <div class="proj-title">On-ieum</div>
+        <div class="proj-detail">
+          Public transit guidance kiosk designed for the Digitally Vulnerable. Built on Raspberry Pi 5 + Hailo AI HAT+ for face recognition and Speech-to-Text, with gRPC communication to Jetson Orin Nano running an Ondevice LLM. Integrates Public transit APIs and USB thermal receipt.
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/dongjunkim-eecs/on-ieum" target="_blank">Code</a>
+        </div>
       </div>
     </div>
 
@@ -216,3 +228,5 @@
 </div>
 </body>
 </html>
+
+</body></html>
