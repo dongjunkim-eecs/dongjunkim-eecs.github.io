@@ -23,7 +23,7 @@
     .header-info{padding-top: 0;}
     .header-name{font-size:36px;font-family:Arial, sans-serif;font-weight:700;margin-bottom:10px;margin-top:8px}
     .header-role{font-size:15px;color:#555;margin-bottom:18px;line-height:1.7}
-    .header-bio{font-size:14px;color:#333;line-height:1.75;margin-bottom:20px;max-width:600px}
+    .header-bio{font-size:14px;color:#333;line-height:1.75;margin-bottom:20px;max-width:720px}
     .header-bio a{color:#000;font-weight:700}
     .header-links{display:flex;gap:28px;flex-wrap:wrap}
     .header-links a{font-size:14px;color:#000;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:6px}
@@ -32,11 +32,13 @@
     /* SECTIONS */
     .section{margin-bottom:72px}
     .section-title{font-size:16px;font-family: Arial, sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0em;margin-bottom:28px}
-
+    .section.news-section { max-height: 190px; overflow-y: auto; }
+    
     /* NEWS */
     .news-item{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:10px 0;font-size:14px}
     .news-date{color:#888;font-weight:700;padding-top:1px}
     .news-text{color:#333}
+    .news-scroll { max-height: 190px; overflow-y: auto; }
 
     /* PUBLICATIONS — thumbnail style */
     .pub{display:flex;gap:24px;margin-bottom:36px;align-items:flex-start}
@@ -119,24 +121,25 @@
   <div class="section">
     <div class="section-title">News</div>
 
-    <div class="news-item">
-      <span class="news-date">Sep 4, 2026</span>
-      <span class="news-text">1st-authored paper (QAD) accepted to IEEE Embedded Systems Letters (ESL) 🎉</span>
-    </div>
-
-    <div class="news-item">
-      <span class="news-date">Aug 6, 2026</span>
-      <span class="news-text">Received <b>Outstanding Project Team Award</b> and <b>Outstanding Individual Student Award</b> at Purdue-KIAT AI-track Program</span>
-    </div>
-
-    <div class="news-item">
-      <span class="news-date">Jul 13, 2026</span>
-      <span class="news-text">Visiting Scholar at <strong>Purdue University - KIAT</strong> (Edge Acoustics AI for Manufacturing)</span>
-    </div>
-
-    <div class="news-item">
-      <span class="news-date">Jun 25, 2026</span>
-      <span class="news-text">2nd-authored paper (ShuffleFAC) accepted to IEEE Embedded Systems Letters (ESL) 🎉</span>
+    <div class="news-scroll">
+      <div class="news-item">
+        <span class="news-date">Sep 4, 2026</span>
+        <span class="news-text">1st-authored paper (QAD) accepted to IEEE Embedded Systems Letters (ESL) 🎉</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Aug 6, 2026</span>
+        <span class="news-text">Received <b>Outstanding Project Team Award</b> and <b>Outstanding Individual Student Award</b> at Purdue-KIAT AI-track Program</span>
+      </div>
+  
+      <div class="news-item">
+        <span class="news-date">Jul 13, 2026</span>
+        <span class="news-text">Visiting Scholar at <strong>Purdue University - KIAT</strong> (Edge Acoustics AI for Manufacturing)</span>
+      </div>
+  
+      <div class="news-item">
+        <span class="news-date">Jun 25, 2026</span>
+        <span class="news-text">2nd-authored paper (ShuffleFAC) accepted to IEEE Embedded Systems Letters (ESL) 🎉</span>
+      </div>
     </div>
   </div>
 
